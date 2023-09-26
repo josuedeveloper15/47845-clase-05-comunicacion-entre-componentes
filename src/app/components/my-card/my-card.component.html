@@ -1,0 +1,17 @@
+<div class="card" [ngClass]="bgColor" style="width: 100%;">
+  <img *ngIf="imgSrc.length" [src]="imgSrc" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 *ngIf="title.length" class="card-title">{{ title }}</h5>
+
+
+
+    <ng-content></ng-content>
+
+
+
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    <button (click)="clickEvent.emit('El titulo de esta tarjeta es: ' + title)" class="btn btn-primary">Go somewhere</button>
+
+    <ng-container *ngTemplateOutlet="genderTemplate"></ng-container>
+  </div>
+</div>
